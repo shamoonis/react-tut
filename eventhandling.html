@@ -1,0 +1,43 @@
+<!--eventhandling.html-->
+<html>
+<head>
+	<title></title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+</head>
+<body>
+	<div id="container"></div>
+
+	<script type="text/babel">
+      var Comment = React.createClass({
+      	edit:function(){
+      		alert('Editing comment');
+      	},
+
+      	remove:function(){
+      		alert('Removing comment');
+      	},
+
+      	render:function(){
+      		return(
+      				<div className="CommentContainer">
+      					<div className="commentText">{this.props.children}</div>
+      					<button onClick={this.edit}>Edit</button>
+      					<button onClick={this.remove}>Remove</button>
+      				</div>
+      			);
+      	}
+      });
+
+      ReactDOM.render(
+      	<div className="board">
+      		<Comment>Hey my name is john</Comment>
+      		<Comment>Beans</Comment>
+      		<Comment>Tuna</Comment>
+      	</div>, document.getElementById('container')
+      	);
+    </script>
+
+</body>
+</html>

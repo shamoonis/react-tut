@@ -24,6 +24,10 @@
         }
       });
 
+      var items = [
+        {"Country":"USA","City":"Florida","EmailID":"John@doe.com","LastName":"Doe","FirstName":"John","EmployeeID":"1"}
+      ];
+
       var EmployeeGridTable = React.createClass({
         getInitialState: function(){
           return{
@@ -44,6 +48,7 @@
           this.state.items.forEach(function(item){
             rows.push(<EmployeeGridRow key={item.EmployeeID} item={item}/> );
           });
+
           return(<table className="table table-bordered table-responsive">
             <thead>
               <tr>
